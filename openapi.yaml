@@ -3,6 +3,8 @@ info:
   title: Lock Context Matrix API
   description: Canonical context lock and propagation for MAYORGATE
   version: 1.0.0
+servers:
+  - url: https://yourusername.github.io/mayorgate-actions
 paths:
   /lock:
     post:
