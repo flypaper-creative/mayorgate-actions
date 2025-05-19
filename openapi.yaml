@@ -1,0 +1,32 @@
+openapi: 3.0.1
+info:
+  title: Lock Context Matrix API
+  description: Canonical context lock and propagation for MAYORGATE
+  version: 1.0.0
+paths:
+  /lock:
+    post:
+      operationId: lockContextMatrix
+      summary: Lock and propagate canonical MAYORGATE context
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                contextUpdate:
+                  type: object
+                  description: Object containing any new or updated MAYORGATE context data
+      responses:
+        "200":
+          description: Canonical context locked
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  updatedContext:
+                    type: object
